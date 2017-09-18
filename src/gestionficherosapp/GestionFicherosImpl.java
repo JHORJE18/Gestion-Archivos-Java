@@ -326,6 +326,9 @@ public class GestionFicherosImpl implements GestionFicheros {
 		}
 		
 		//Existe
+		if (!file.exists()){
+			throw new GestionFicherosException("No existe el fichero");
+		}
 		if (fileNEW.exists()){
 			throw new GestionFicherosException("Ya existe un archivo/directorio igual");
 		}
